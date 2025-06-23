@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janhvi Dixit - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter for a clean, modern look & Orbitron for the techy feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Custom styles for the tech theme */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a192f; /* A deep navy blue */
+            color: #cbd5e1; /* A light gray for body text */
+        }
+        
+        /* Set scroll padding to prevent nav from overlapping section titles */
+        html {
+            scroll-padding-top: 5rem; /* Adjust this value based on nav height */
+        }
+
+        /* Tech-y font for the name animation */
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Typing animation */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #64ffda; } /* A bright, techy cyan/mint color */
+        }
+
+        .animate-typing {
+            overflow: hidden;
+            border-right: .2em solid #64ffda;
+            white-space: nowrap;
+            animation:
+                typing 3s steps(20, end) forwards,
+                blink-caret .75s step-end infinite;
+        }
+
+        /* Custom scrollbar for the projects section */
+        .scroll-box::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scroll-box::-webkit-scrollbar-track {
+            background: #1e293b; /* A slightly lighter navy */
+            border-radius: 10px;
+        }
+
+        .scroll-box::-webkit-scrollbar-thumb {
+            background-color: #38bdf8; /* Bright blue for the scroll handle */
+            border-radius: 10px;
+            border: 2px solid #1e293b;
+        }
+        
+        /* Glassmorphism effect for cards */
+        .glass-card {
+            background: rgba(20, 36, 62, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* Fade-in animation for sections */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+    
+    <!-- Sticky Navigation Bar -->
+    <nav class="sticky top-0 z-50 glass-card shadow-md shadow-sky-900/10">
+        <div class="container mx-auto max-w-5xl px-4">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="text-2xl font-orbitron font-bold text-white">JD</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">About</a>
+                    <a href="#skills" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">Skills</a>
+                    <a href="#projects" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">Projects</a>
+                    <a href="#contact" class="text-gray-300 hover:text-sky-400 transition-colors duration-300">Contact</a>
+                </div>
+                <!-- Mobile Menu Button (optional, for smaller screens) -->
+                <div class="md:hidden">
+                    <!-- You can add a hamburger menu icon here -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main Container -->
+    <div class="container mx-auto max-w-5xl px-4 py-8 md:py-16">
+
+        <!-- Header Section: Profile Photo and Animated Name -->
+        <header id="home" class="text-center my-16 fade-in-section">
+            <img src="https://raw.githubusercontent.com/aditya-prashar-1/images/main/pocketfriendly.png" 
+                 alt="Profile Photo" 
+                 onerror="this.onerror=null;this.src='https://placehold.co/150x150/0a192f/64ffda?text=JD';"
+                 class="w-36 h-36 md:w-40 md:h-40 rounded-full mx-auto mb-6 border-4 border-sky-400 shadow-lg shadow-sky-400/20">
+            
+            <div class="flex justify-center">
+                 <h1 class="text-4xl md:text-6xl font-bold text-white font-orbitron animate-typing w-0">Janhvi Dixit</h1>
+            </div>
+
+            <p class="text-sky-300 mt-4 text-lg md:text-xl">Aspiring Software Developer & Tech Enthusiast</p>
+            
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-6 mt-6">
+                <a href="mailto:dixitjanhvi3@gmail.com" class="text-gray-400 hover:text-sky-400 transition-colors duration-300"><i class="fas fa-envelope fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/janhvi-dixit" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-sky-400 transition-colors duration-300"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://github.com/janhvidixit" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-sky-400 transition-colors duration-300"><i class="fab fa-github fa-2x"></i></a>
+            </div>
+        </header>
+
+        <!-- About Me Section -->
+        <section id="about" class="mb-24 fade-in-section glass-card p-6 md:p-8 rounded-lg">
+            <h2 class="text-3xl font-bold text-white mb-4 border-b-2 border-sky-400/50 pb-2">About Me</h2>
+            <p class="text-gray-300 leading-relaxed text-lg">
+                A detail-oriented and persistent Computer Science student at VIT, Vellore. I am a quick learner with a passion for developing dynamic applications and a strong foundation in both front-end and back-end technologies. I thrive in collaborative environments and enjoy bringing ideas to life through code.
+            </p>
+        </section>
+
+        <!-- Interactive Skills Section -->
+        <section id="skills" class="mb-24 fade-in-section">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center border-b-2 border-sky-400/50 pb-4">Technical Skills</h2>
+            <p class="text-center text-gray-400 mb-12">Hover over a skill to see my proficiency!</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+                
+                <!-- Skill: Python -->
+                <div class="group relative flex flex-col items-center justify-center p-4 glass-card rounded-lg aspect-square transition-all duration-300 hover:!border-sky-400 hover:transform hover:-translate-y-2">
+                    <div class="text-center transition-opacity duration-300 group-hover:opacity-0">
+                        <i class="fab fa-python text-5xl md:text-6xl text-sky-300"></i>
+                        <p class="mt-4 font-semibold text-white">Python</p>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-sky-900/80">
+                        <span class="text-3xl md:text-4xl font-bold text-white">90%</span>
+                    </div>
+                </div>
+
+                <!-- Skill: Java -->
+                <div class="group relative flex flex-col items-center justify-center p-4 glass-card rounded-lg aspect-square transition-all duration-300 hover:!border-sky-400 hover:transform hover:-translate-y-2">
+                    <div class="text-center transition-opacity duration-300 group-hover:opacity-0">
+                        <i class="fab fa-java text-5xl md:text-6xl text-sky-300"></i>
+                        <p class="mt-4 font-semibold text-white">Java</p>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-sky-900/80">
+                        <span class="text-3xl md:text-4xl font-bold text-white">85%</span>
+                    </div>
+                </div>
+
+                <!-- Skill: React.js -->
+                <div class="group relative flex flex-col items-center justify-center p-4 glass-card rounded-lg aspect-square transition-all duration-300 hover:!border-sky-400 hover:transform hover:-translate-y-2">
+                    <div class="text-center transition-opacity duration-300 group-hover:opacity-0">
+                        <i class="fab fa-react text-5xl md:text-6xl text-sky-300"></i>
+                        <p class="mt-4 font-semibold text-white">React.js</p>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-sky-900/80">
+                        <span class="text-3xl md:text-4xl font-bold text-white">80%</span>
+                    </div>
+                </div>
+                
+                <!-- Skill: Databases -->
+                <div class="group relative flex flex-col items-center justify-center p-4 glass-card rounded-lg aspect-square transition-all duration-300 hover:!border-sky-400 hover:transform hover:-translate-y-2">
+                    <div class="text-center transition-opacity duration-300 group-hover:opacity-0">
+                        <i class="fas fa-database text-5xl md:text-6xl text-sky-300"></i>
+                        <p class="mt-4 font-semibold text-white">SQL/NoSQL</p>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-sky-900/80">
+                        <span class="text-3xl md:text-4xl font-bold text-white">88%</span>
+                    </div>
+                </div>
+
+                <!-- Skill: HTML/CSS/JS -->
+                <div class="group relative flex flex-col items-center justify-center p-4 glass-card rounded-lg aspect-square transition-all duration-300 hover:!border-sky-400 hover:transform hover:-translate-y-2">
+                    <div class="text-center transition-opacity duration-300 group-hover:opacity-0">
+                        <i class="fab fa-js-square text-5xl md:text-6xl text-sky-300"></i>
+                        <p class="mt-4 font-semibold text-white">Web Dev</p>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-sky-900/80">
+                        <span class="text-3xl md:text-4xl font-bold text-white">95%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Projects Section with Scroll Box -->
+        <section id="projects" class="mb-24 fade-in-section glass-card p-6 md:p-8 rounded-lg">
+            <h2 class="text-3xl font-bold text-white mb-6 text-center">Projects</h2>
+            <div class="scroll-box max-h-[450px] overflow-y-auto pr-4">
+                <div class="space-y-6">
+                    <!-- Project 1 -->
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold text-sky-300">Tomato Food Delivery Website</h3>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github fa-lg"></i></a>
+                        </div>
+                        <p class="mt-2 text-gray-400">Developed a full-stack food delivery platform allowing users to browse food items, add them to a cart, and place orders. Implemented dynamic UI with React.js and built RESTful APIs using Node.js and Express, with MongoDB for data storage.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="text-xs font-semibold text-cyan-300 bg-cyan-900/50 px-2 py-1 rounded">React.js</span>
+                            <span class="text-xs font-semibold text-cyan-300 bg-cyan-900/50 px-2 py-1 rounded">Node.js</span>
+                            <span class="text-xs font-semibold text-cyan-300 bg-cyan-900/50 px-2 py-1 rounded">MongoDB</span>
+                            <span class="text-xs font-semibold text-cyan-300 bg-cyan-900/50 px-2 py-1 rounded">Express</span>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-sky-400 transition-all duration-300 transform hover:-translate-y-1">
+                        <div class="flex justify-between items-start">
+                             <h3 class="text-xl font-bold text-sky-300">Employee Management System</h3>
+                             <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github fa-lg"></i></a>
+                        </div>
+                        <p class="mt-2 text-gray-400">Designed a system with modular components (Add, Update, View Employee) for clear separation of concerns. Integrated JDBC for seamless database connectivity and SQL operations, ensuring an intuitive UI for easy navigation.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="text-xs font-semibold text-cyan-300 bg-cyan-900/50 px-2 py-1 rounded">Java</span>
+                            <span class="text-xs font-semibold text-cyan-300 bg-cyan-900/50 px-2 py-1 rounded">JDBC</span>
+                            <span class="text-xs font-semibold text-cyan-300 bg-cyan-900/50 px-2 py-1 rounded">SQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Me Section -->
+        <section id="contact" class="fade-in-section glass-card p-6 md:p-8 rounded-lg">
+            <h2 class="text-3xl font-bold text-white mb-6 text-center">Get In Touch</h2>
+            <p class="text-center max-w-lg mx-auto mb-10">
+                I'm currently open to new opportunities and collaborations. My inbox is always open, so feel free to reach out. I'll get back to you as soon as possible!
+            </p>
+            <div class="text-center">
+                 <a href="mailto:dixitjanhvi3@gmail.com" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 text-lg">
+                    Say Hello
+                </a>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="text-center py-6 text-gray-500 text-sm">
+        <p>Designed & Built by Janhvi Dixit</p>
+    </footer>
+
+    <script>
+        // JavaScript for fade-in animations on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Stagger the animation slightly
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, 150);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
